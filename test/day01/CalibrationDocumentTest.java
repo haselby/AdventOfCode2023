@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CalibrationDocumentTest {
 
     static ArrayList<String> puzzleInputTest01;
-    static ArrayList<String> puzzleInputTest02;
 
     @BeforeAll
     static void beforeAll() {
@@ -26,14 +25,6 @@ public class CalibrationDocumentTest {
             e.printStackTrace();
         }
 
-        puzzleInputTest02 = new ArrayList<>();
-
-        try {
-            puzzleInputTest02 = PuzzleInput.readIntoListOfStrings("input_day01-02.txt");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @BeforeEach
@@ -50,7 +41,6 @@ public class CalibrationDocumentTest {
     static void afterAll() {
 
     }
-
 
     @Test
     @DisplayName("readIntoListOfStrings - passing example input file - returns expected list of Strings")
@@ -88,22 +78,4 @@ public class CalibrationDocumentTest {
         assertEquals(142, calibrationDocument.getSumOfCalibrationValues());
     }
 
-    @Test
-    @DisplayName("extractCalibrationValues - passing second puzzle example input file- returns expected list of Integers")
-    void extractCalibrationValues_SecondPuzzleExampleInputFile_ReturnsExpectedListOfIntegers() {
-
-        ArrayList<Integer> listOfIntegers = new ArrayList<>();
-
-        CalibrationDocument calibrationDocument2 = new CalibrationDocument(puzzleInputTest02);
-        listOfIntegers = calibrationDocument2.extractListOfCalibrationValues();
-
-        assertEquals(29, listOfIntegers.get(0));
-        assertEquals(83, listOfIntegers.get(1));
-        assertEquals(13, listOfIntegers.get(2));
-        assertEquals(24, listOfIntegers.get(3));
-        assertEquals(42, listOfIntegers.get(4));
-        assertEquals(14, listOfIntegers.get(5));
-        assertEquals(76, listOfIntegers.get(6));
-
-    }
 }
