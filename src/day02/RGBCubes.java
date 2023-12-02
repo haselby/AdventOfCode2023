@@ -34,4 +34,12 @@ public class RGBCubes {
     public void setBlue(int blue) {
         this.blue = blue;
     }
+
+    // the add method takes another RGBCubes object as a parameter and adds its red, green, and blue values to the current object's respective values
+    public void add(RGBCubes other) {
+        this.red += other.getRed();
+        this.green += other.getGreen();
+        this.blue += other.getBlue();
+    }
+
 }

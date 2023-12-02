@@ -29,5 +29,14 @@ public class RGBCubesTest {
         rgbCubes.setBlue(128);
         assertEquals(128, rgbCubes.getBlue());
     }
+
+    @Test
+    public void testAdd() {
+    RGBCubes other = new RGBCubes(50, 50, 50);
+    rgbCubes.add(other);
+    assertEquals(305, rgbCubes.getRed());
+    assertEquals(305, rgbCubes.getGreen());
+    assertEquals(305, rgbCubes.getBlue());
+}
 }
 
