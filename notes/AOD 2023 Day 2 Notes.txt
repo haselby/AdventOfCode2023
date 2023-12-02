@@ -1,0 +1,51 @@
+AOD 2023 Day 2 Observations
+
+List of Games
+
+Each game has an ID  (Note: not zero based)
+Each game consist of set of cubes.  (Note: probably used SET as a hint for ideal data types)
+Set are unordered. Meaning color tags are in no specific order.
+Also there are cases where not all color are present.
+
+
+The Elf would first like to know which games would have been possible if the bag contained only 12 red cubes, 13 green cubes, and 14 blue cubes?
+
+My guess is that RGB set is a refence to an RGB color value.
+
+This is a max number of cube types is a set its own right.
+
+
+List of Games
+
+Game is an ID with and a list of setsOfCubes
+
+setsOfCubes contain integer values for R, G, B
+
+
+It is probably best to encode this structure during the PuzzleInput
+
+Puzzle Method that reads input text file would return this type
+
+ArrayList<Games>
+
+Games is a int, ArrayList<setOfRGBCubes>
+
+setOfRGBCubes set of integers R = red, G = green, B = blue
+
+SetofRGBCubes
+
+SetofRGBCubes setOfRGBCubes = new setOfRGBCubes(0,0,0)
+
+setOfRGBCubes.setBlue = 3
+setOfRGBCubes.setRed = 4
+Game.addSetOfCubes = setOFRGBCubes
+
+
+Game could have a function that calculates total number of RGBCubes
+
+In this case it would be nice to make RGBCubes class more general so that it can be used for both
+sets of RGB Cubes and Total number of RGB Cubes
+
+RGBCubes <-- This might be a good class name. 
+
+It would also be nice to have an RGB method that adds RGB value from another RGB Object (adding it to a running sum)
