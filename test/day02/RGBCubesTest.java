@@ -37,6 +37,8 @@ public class RGBCubesTest {
     assertEquals(305, rgbCubes.getRed());
     assertEquals(305, rgbCubes.getGreen());
     assertEquals(305, rgbCubes.getBlue());
-}
+    }
+
+
 }
 
