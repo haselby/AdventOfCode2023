@@ -66,12 +66,30 @@ public class CubeGameTest {
         cubeGame3.addRGBCube(Cube2);
         cubeGame3.addRGBCube(Cube3);
 
-        RGBCubes totalNumberOfRGBCubes = cubeGame3.SumOfRGBCubes();
+        RGBCubes totalNumberOfRGBCubes = cubeGame3.sumOfRGBCubes();
 
         assertEquals(75, totalNumberOfRGBCubes.getRed());
         assertEquals(175, totalNumberOfRGBCubes.getGreen());
         assertEquals(15, totalNumberOfRGBCubes.getBlue());
 
     }
+
+    @Test
+    public void testMaxRequiredRGBCubes() {
+    // Create a CubeGame object and add several RGBCubes objects to it
+    CubeGame game = new CubeGame(1);
+    game.addRGBCube(new RGBCubes(10, 20, 30));
+    game.addRGBCube(new RGBCubes(20, 30, 40));
+    game.addRGBCube(new RGBCubes(30, 40, 50));
+
+    // Call the maxRequiredRGBCubes method on the CubeGame object
+    RGBCubes maxCubes = game.maxRequiredRGBCubes();
+
+    // Check that the number of red, green, and blue cubes in the returned RGBCubes object is correct
+    assertEquals(30, maxCubes.getRed());
+    assertEquals(40, maxCubes.getGreen());
+    assertEquals(50, maxCubes.getBlue());
+}
+
 
 }

@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@DisplayName("Day 2, Part 1 - FirstPuzzleTest")
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@DisplayName("FirstPuzzleTest")
 public class FirstPuzzleTest {
 
     static List<CubeGame> returnedCubeGames = new ArrayList<>();
@@ -35,8 +37,15 @@ public class FirstPuzzleTest {
     }
 
     @Test
-    @DisplayName("printSumOfCubesForEachGame - passing example list of CubeGames - prints expected sums of cubes")
-    void printSumOfCubesForEachGame_ExampleListOfCubeGames_PrintsExpectedSumsOfCubes() {
-        FirstPuzzle.printSumOfCubesForEachGame(returnedCubeGames);
+    @DisplayName("printMaxRequiredCubesForEachGame - passing example list of CubeGames - prints expected sums of cubes")
+    void printMaxRequiredCubesForEachGame_ExampleListOfCubeGames_PrintsExpectedSumsOfCubes() {
+        FirstPuzzle.printMaxRequiredCubesForEachGame(returnedCubeGames);
+    }
+
+    @Test
+    @DisplayName("sumOfGameIDsOfPossibleGames - passing example list of CubeGames - prints expected sums of Game IDs")
+    void sumOfGameIDsOfPossibleGames_ExampleListOfCubeGames_PrintsExpectedSumOfGameIDs() {
+        Integer sumOfGameIds = FirstPuzzle.sumOfGameIDsOfPossibleGames(returnedCubeGames, 12,13,14);
+        assertEquals(8, sumOfGameIds);
     }
 }

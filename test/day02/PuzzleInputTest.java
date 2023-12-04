@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 // Unit Test Naming Standard:   UnitOfWork_StateUnderTest_ExpectedBehavior
 // https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html
 
-@DisplayName("Day 1, Part 1 - PuzzleInput Test")
+@DisplayName("PuzzleInput Test")
 public class PuzzleInputTest {
     @BeforeAll
     static void beforeAll() {

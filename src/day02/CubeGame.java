@@ -30,12 +30,28 @@ public class CubeGame {
         this.rgbCubesList.add(rgbCube);
     }
 
-    public RGBCubes SumOfRGBCubes () {
+    public RGBCubes sumOfRGBCubes() {
         RGBCubes rgbCubeTotal = new RGBCubes(0,0,0);
         for (RGBCubes cube : this.rgbCubesList) {
             rgbCubeTotal.add(cube);
         }
         return rgbCubeTotal;
+    }
+
+    public RGBCubes maxRequiredRGBCubes () {
+        RGBCubes rgbCubeMax = new RGBCubes(0,0,0);
+        for (RGBCubes cube : this.rgbCubesList) {
+            if (rgbCubeMax.getRed() <= cube.getRed()){
+                rgbCubeMax.setRed(cube.getRed());
+            }
+            if (rgbCubeMax.getGreen() <= cube.getGreen()){
+                rgbCubeMax.setGreen(cube.getGreen());
+            }
+            if (rgbCubeMax.getBlue() <= cube.getBlue()){
+                rgbCubeMax.setBlue(cube.getBlue());
+            }
+        }
+        return rgbCubeMax;
     }
 
 }
